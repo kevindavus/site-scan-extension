@@ -9,7 +9,7 @@
 
 ## Installation
 
-Download the zip from here: -  [Download ZIP](https://github.com/mw-wf/Site-Scan-Prototype/archive/refs/heads/main.zip) - then unzip the folder.
+Download the zip from here: -  [Download ZIP](https://github.com/mw-wf/site-scan-extension/archive/refs/heads/master.zip) - then unzip the folder.
 
 
 Navigate to chrome://extensions/ in Chrome Browser and make sure you have Developer Mode enabled.
