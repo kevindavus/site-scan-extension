@@ -1,0 +1,16 @@
+{
+	"name": "Site Scanner",
+	"version": "1.0",
+	"description": "Site Scanner for TS",
+    "browser_action": {
+        "default_title": "Site Scanner for TS",
+        "default_popup": "popup.html"
+      },
+	"permissions": ["declarativeContent", "activeTab", "tabs", "downloads", "*://*/*", "storage"],
+	"background": {
+    	"scripts": ["jquery-3.6.0.min.js", "prism.js", "background.js"],
+      	"persistent": true
+
+    },
+	"manifest_version": 2
+}
