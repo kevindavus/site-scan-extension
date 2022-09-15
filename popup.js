@@ -73,20 +73,25 @@ async function goToPage(url, url_index, tab_id) {
           chrome.runtime.onMessage.removeListener(getDOMInfo);
 
           // save data from message to a JSON file and download
-          let json_data = {
-            time: JSON.parse(message).time,
-            headCode: JSON.parse(message).headCode,
-            footerCode: JSON.parse(message).footerCode,
-            redirects: JSON.parse(message).redirects,
-            base: JSON.parse(message).base,
-            href: JSON.parse(message).href,
-            legacy: JSON.parse(message).legacy,
-            recaptcha: JSON.parse(message).recaptcha,
-            canonical: JSON.parse(message).canonical,
-            robots: JSON.parse(message).robots,
-            sitemap: JSON.parse(message).sitemap,
-            optimize: JSON.parse(message).optimize,
-          };
+
+
+          let json_data = JSON.parse(message)
+
+          const {
+            time,
+            headCode,
+            footerCode,
+            redirects,
+            base,
+            href,
+            legacy,
+            recaptcha,
+            canonical,
+            robots,
+            sitemap,
+            optimize
+          } = json_data
+          
 
           // Setting sections from popup.html as variables
 
