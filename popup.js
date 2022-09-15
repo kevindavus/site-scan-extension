@@ -126,104 +126,104 @@ async function goToPage(url, url_index, tab_id) {
           // Listing outputs to be matched up with sections
 
           const outputs = [
-            json_data.headCode,
-            json_data.footerCode,
-            json_data.redirects,
-            json_data.base,
-            json_data.href,
-            json_data.legacy,
-            json_data.recaptcha,
-            json_data.canonical,
-            json_data.time,
-            json_data.robots,
-            json_data.optimize,
+            headCode,
+            footerCode,
+            redirects,
+            base,
+            href,
+            legacy,
+            recaptcha,
+            canonical,
+            time,
+            robots,
+            optimize,
           ];
 
           // Bubble conditionals
 
-          if (json_data.recaptcha === true) {
+          if (recaptcha === true) {
             $('#recaptcha-bubble').addClass('yellow');
-          } else if (json_data.recaptcha === false) {
+          } else if (recaptcha === false) {
             $('#recaptcha-bubble').addClass('green');
           }
 
-          if (json_data.legacy === true) {
+          if (legacy === true) {
             $('#legacy-bubble').addClass('yellow');
-          } else if (json_data.legacy === false) {
+          } else if (legacy === false) {
             $('#legacy-bubble').addClass('green');
           }
 
-          if (json_data.headCode === undefined) {
+          if (headCode === undefined) {
             $('#headcode-bubble').addClass('green');
           } else if (
-            json_data.headCode.includes('<style>') &&
-            !json_data.headCode.includes('</style>')
+            headCode.includes('<style>') &&
+            !headCode.includes('</style>')
           ) {
             $('#headcode-bubble').addClass('red');
           } else if (
-            json_data.headCode.includes('<script') &&
-            !json_data.headCode.includes('</script>')
+            headCode.includes('<script') &&
+            !headCode.includes('</script>')
           ) {
             $('#headcode-bubble').addClass('red');
           } else {
             $('#headcode-bubble').addClass('yellow');
           }
 
-          if (json_data.footerCode === undefined) {
+          if (footerCode === undefined) {
             $('#footer-bubble').addClass('green');
           } else if (
-            json_data.footerCode.includes('<style>') &&
-            !json_data.footerCode.includes('</style>')
+            footerCode.includes('<style>') &&
+            !footerCode.includes('</style>')
           ) {
             $('#footer-bubble').addClass('red');
           } else if (
-            json_data.footerCode.includes('<script') &&
-            !json_data.footerCode.includes('</script>')
+            footerCode.includes('<script') &&
+            !footerCode.includes('</script>')
           ) {
             $('#footer-bubble').addClass('red');
           } else {
             $('#footer-bubble').addClass('yellow');
           }
-          if (json_data.base === undefined) {
+          if (base === undefined) {
             $('#base-bubble').addClass('green');
           } else {
             $('#base-bubble').addClass('yellow');
           }
 
-          if (json_data.href === undefined) {
+          if (href === undefined) {
             $('#href-bubble').addClass('green');
           } else {
             $('#href-bubble').addClass('yellow');
           }
 
-          if (json_data.redirects === 'No redirects') {
+          if (redirects === 'No redirects') {
             $('#redirect-bubble').addClass('green');
           } else {
             $('#redirect-bubble').addClass('yellow');
           }
 
-          if (json_data.canonical === undefined) {
+          if (canonical === undefined) {
             $('#canonical-bubble').addClass('green');
           } else if (
-            json_data.canonical.charAt(json_data.canonical.length - 1) === '/'
+            canonical.charAt(json_data.canonical.length - 1) === '/'
           ) {
             $('#canonical-bubble').addClass('red');
           } else {
             $('#canonical-bubble').addClass('yellow');
           }
 
-          if (json_data.robots === undefined) {
+          if (robots === undefined) {
             $('#robots-bubble').addClass('green');
           } else if (
-            json_data.robots.includes('Sitemap') &&
-            json_data.sitemap === true
+            robots.includes('Sitemap') &&
+            sitemap === true
           ) {
             $('#robots-bubble').addClass('red');
           } else {
             $('#robots-bubble').addClass('green');
           }
 
-          if (json_data.optimize === undefined) {
+          if (optimize === undefined) {
             $('#optimize-bubble').addClass('green');
           } else {
             $('#optimize-bubble').addClass('yellow');
