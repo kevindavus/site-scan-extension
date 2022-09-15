@@ -2,7 +2,7 @@
 
 const page_body = document.body.textContent;
 const pageParse = JSON.parse(page_body);
-const site = pageParse.siteMeta || {};
+const site = pageParse.site || {};
 const siteMeta = pageParse.siteMeta[0] || {};
 const { timezone, recaptchaRequired } = site;
 const {
